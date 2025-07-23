@@ -1,0 +1,7 @@
+package com.aurionpro.model;
+
+public class PlayWithPick implements PlayBehavior {
+    public void play() {
+        System.out.println("Playing with a pick.");
+    }
+}

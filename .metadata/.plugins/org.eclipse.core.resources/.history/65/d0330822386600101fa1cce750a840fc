@@ -1,0 +1,66 @@
+package com.aurionpro.model;
+
+import java.util.Scanner;
+
+class TicTacToeFacade {
+	private Board board;
+	private Player player1, player2;
+	private GameEngine gameEngine;
+	private Scanner scanner;
+
+	public TicTacToeFacade() {
+		board = new Board();
+		gameEngine = new GameEngine();
+		scanner = new Scanner(System.in);
+	}
+
+	public void startGame() {
+		System.out.println("Welcome to Tic Tac Toe!");
+
+		System.out.print("Player 1, enter your name: ");
+		String name1 = scanner.nextLine();
+		player1 = new Player(name1, ISymbol.X);
+
+		System.out.print("Player 2, enter your name: ");
+		String name2 = scanner.nextLine();
+		player2 = new Player(name2, ISymbol.O);
+
+		gameEngine.setStartingPlayer(player1);
+
+		IGameStatus status = IGameStatus.ONGOING;
+		board.displayBoard();
+
+		while (status == IGameStatus.ONGOING) {
+			Player current = gameEngine.getCurrentPlayer();
+			System.out.print(current.getName() + " (" + current.getSymbol() + ") turn. Enter row and column (0-2): ");
+
+			int row = scanner.nextInt();
+			int col = scanner.nextInt();
+
+			if (row < 0 || row > 2 || col < 0 || col > 2) {
+				System.out.println("Invalid input! Row and column must be between 0 and 2.");
+				continue;
+			}
+
+			if (!board.isCellEmpty(row, col)) {
+				System.out.println("Cell is already occupied. Try again.");
+				continue;
+			}
+
+			board.placeSymbol(row, col, current.getSymbol());
+			board.displayBoard();
+
+			if (gameEngine.isWinningMove(board, current.getSymbol())) {
+				System.out.println("Result: " + current.getName() + " wins! Congratulations!");
+				status = IGameStatus.WIN;
+				break;
+			} else if (board.isFull()) {
+				System.out.println("Result: It's a draw!");
+				status = IGameStatus.DRAW;
+				break;
+			}
+
+			gameEngine.switchPlayer(player1, player2);
+		}
+	}
+}

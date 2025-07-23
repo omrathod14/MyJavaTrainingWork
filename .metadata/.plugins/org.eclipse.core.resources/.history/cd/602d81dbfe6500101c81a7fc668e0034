@@ -1,0 +1,26 @@
+package com.aurionpro.test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
+
+import com.aurionpro.model.Calculator;
+
+public class CalculatorTest {
+
+	Calculator cal = new Calculator();
+
+	@Test
+	public void testAddition() {
+		int sum = cal.Add(4, 6);
+		assertEquals(10, sum);
+	}
+
+	@Test
+	public void testSubtraction() {
+		double sub = cal.Sub(10, 2.5);
+		assertEquals(7.5, sub);
+
+	}
+
+}

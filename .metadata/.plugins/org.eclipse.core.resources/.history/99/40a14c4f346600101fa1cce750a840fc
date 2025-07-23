@@ -1,0 +1,7 @@
+package com.aurionpro.model;
+
+//Enum for Game Status
+
+enum GameStatus {
+	ONGOING, DRAW, WIN
+}

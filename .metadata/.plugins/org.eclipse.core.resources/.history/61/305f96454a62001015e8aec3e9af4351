@@ -1,0 +1,5 @@
+package com.aurionpro.Ecommerce.solution.model;
+
+public class PriceCalculator {
+
+}

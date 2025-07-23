@@ -1,0 +1,5 @@
+package com.aurionpro.EwalletApp.model;
+
+public class RechargeDiscount {
+
+}
