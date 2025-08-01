@@ -1,7 +1,0 @@
-package com.aurionpro.model;
-
-public class StandardTune implements TuneBehavior {
-    public void tune() {
-        System.out.println("Tuning to standard EADGBE.");
-    }
-}

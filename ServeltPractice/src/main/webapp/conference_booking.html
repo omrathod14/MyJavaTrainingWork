@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Conference Booking Form</title>
+</head>
+<body>
+	<h2>Conference Booking</h2>
+	<form action="conference" method="post">
+		Name: <input type="text" name="attendeeName" required><br>
+		<br> Email: <input type="email" name="email" required><br>
+		<br> Number of Seats: <input type="number" name="seats" min="1"
+			max="10" required><br>
+		<br> Date of Attendance: <input type="date" name="date" required><br>
+		<br> Session Type: <select name="sessionType" required>
+			<option value="">--Select--</option>
+			<option value="Technical">Technical</option>
+			<option value="Workshop">Workshop</option>
+			<option value="Networking">Networking</option>
+		</select><br>
+		<br> <input type="submit" value="Book Now">
+	</form>
+</body>
+</html>

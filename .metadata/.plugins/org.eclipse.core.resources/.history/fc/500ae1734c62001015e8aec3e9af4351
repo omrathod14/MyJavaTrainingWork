@@ -1,7 +1,0 @@
-package com.aurionpro.EwalletApp.model;
-
-public class BillPaymentDiscount implements DiscountStrategy {
-	public double calculateDiscount(double amount) {
-		return amount * 0.05;
-	}
-}
