@@ -28,6 +28,6 @@ public class LandingServlet extends HttpServlet {
 		out.println("<li><a href='category?type=Fiction'>Fiction</a></li>");
 		out.println("<li><a href='category?type=Science'>Science</a></li>");
 		out.println("<li><a href='category?type=Technology'>Technology</a></li>");
-		out.println("</ul>");
+		out.println("</ul>"); 
 	}
 }

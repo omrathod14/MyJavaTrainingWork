@@ -1,6 +1,0 @@
-package com.aurionpro.model;
-
-//Eum for Player Symbol 
-enum ISymbol {
-	X, O
-}

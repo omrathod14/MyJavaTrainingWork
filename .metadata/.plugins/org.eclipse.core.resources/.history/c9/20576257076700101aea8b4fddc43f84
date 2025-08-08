@@ -1,8 +1,0 @@
-package com.aurionpro.behavior;
-
-public class OpenGTune implements TuneBehavior {
-    @Override
-    public void tune() {
-        System.out.println("Tuning to Open G (D-G-D-G-B-D).");
-    }
-}
