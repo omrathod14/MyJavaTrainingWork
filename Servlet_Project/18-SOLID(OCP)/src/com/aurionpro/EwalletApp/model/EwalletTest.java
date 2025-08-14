@@ -1,0 +1,18 @@
+package com.aurionpro.EwalletApp.model;
+
+public class EwalletTest {
+	public static void main(String[] args) {
+		double amount = 500;
+		
+		System.out.println("Amount Initial:"+amount);
+
+		OfferEngine rechargeOffer = new OfferEngine(new RechargeDiscount());
+		System.out.println("Recharge Final Amount: ₹" + rechargeOffer.applyOffer(amount));
+
+		OfferEngine shoppingOffer = new OfferEngine(new ShoppingDiscount());
+		System.out.println("Shopping Final Amount: ₹" + shoppingOffer.applyOffer(amount));
+
+		OfferEngine billPayOffer = new OfferEngine(new BillPaymentDiscount());
+		System.out.println("Bill Payment Final Amount: ₹" + billPayOffer.applyOffer(amount));
+	}
+}

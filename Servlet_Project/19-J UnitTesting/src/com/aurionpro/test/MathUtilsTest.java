@@ -1,0 +1,50 @@
+package com.aurionpro.test;
+
+import com.aurionpro.model.MathUtils;
+import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class MathUtilsTest {
+
+	MathUtils mathUtils;
+
+	@BeforeEach
+	void setup() {
+		mathUtils = new MathUtils();
+		System.out.println("Starting test...");
+	}
+
+	@AfterEach
+	void teardown() {
+		System.out.println("Test completed.\n");
+	}
+
+	@Test
+	@DisplayName("Adding two positive numbers")
+	void testAdd() {
+		assertEquals(10, mathUtils.add(7, 3), "Addition should return correct sum");
+	}
+
+	@Test
+	@DisplayName("Multiplying two numbers")
+	void testMultiply() {
+		assertEquals(20, mathUtils.multiply(4, 5), "Multiplication should return correct result");
+	}
+
+	@ParameterizedTest
+	@ValueSource(ints = { 2, 4, 8, 10, 12 })
+	@DisplayName("Check if number is even")
+	void testIsEvenWithEvenNumbers(int number) {
+		assertTrue(mathUtils.isEven(number), number + " should be even");
+	}
+
+	@ParameterizedTest
+	@ValueSource(ints = { 1, 3, 5, 7, 9 })
+	@DisplayName("Check if number is odd")
+	void testIsEvenWithOddNumbers(int number) {
+		assertFalse(mathUtils.isEven(number), number + " should be odd");
+	}
+}

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	id="WebApp_ID" version="4.0">
+
+	<display-name>BookInfoDisplaySystem</display-name>
+
+	<!-- Welcome file -->
+	<welcome-file-list>
+		<welcome-file>welcome</welcome-file>
+	</welcome-file-list>
+
+	<!--Global context-param (Shared across servlets)-->
+	<context-param>
+		<param-name>appVersion</param-name>
+		<param-value>3.4.2</param-value>
+	</context-param>
+
+	<!-- AdminConfigServlet -->
+	<servlet>
+		<servlet-name>AdminConfigServlet</servlet-name>
+		<servlet-class>com.aurionpro.test.AdminConfigServlet</servlet-class>
+		<init-param>
+			<param-name>storeName</param-name>
+			<param-value>ReadRealm</param-value>
+		</init-param>
+		<init-param>
+			<param-name>adminEmail</param-name>
+			<param-value>admin@readrealm.com</param-value>
+		</init-param>
+		<init-param>
+			<param-name>category</param-name>
+			<param-value>Science</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AdminConfigServlet</servlet-name>
+		<url-pattern>/admin</url-pattern>
+	</servlet-mapping>
+
+	<!-- BookCategoryServlet -->
+	<servlet>
+		<servlet-name>BookCategoryServlet</servlet-name>
+		<servlet-class>com.aurionpro.test.BookCategoryServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BookCategoryServlet</servlet-name>
+		<url-pattern>/category</url-pattern>
+	</servlet-mapping>
+
+	<!-- LandingServlet -->
+	<servlet>
+		<servlet-name>LandingServlet</servlet-name>
+		<servlet-class>com.aurionpro.test.LandingServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LandingServlet</servlet-name>
+		<url-pattern>/welcome</url-pattern>
+	</servlet-mapping>
+
+</web-app>

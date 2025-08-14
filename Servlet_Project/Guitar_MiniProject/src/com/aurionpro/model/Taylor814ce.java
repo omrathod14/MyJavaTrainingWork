@@ -1,0 +1,8 @@
+package com.aurionpro.model;
+
+public class Taylor814ce extends AcousticGuitar {
+	@Override
+	public void display() {
+		System.out.println(">>> You have selected the Taylor 814ce <<<");
+	}
+}
